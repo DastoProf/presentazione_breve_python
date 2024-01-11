@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>python 4SIA</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<p style="font-weight: 600;">Il switch case</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p style="font-weight: 600;">Il ciclo <span style="color: blueviolet;">while</span></p>
+						<p>può eseguire un blocco di codice fin tanto ché una certa condizione è vera</p>
+					</section>
+					<section>
+						<p style="font-weight: 600;">sintassi</p>
+						<pre><code data-trim>
+							i = 0
+							while i<5:
+    							i+=1
+   								print (i)
+						</code></pre>
+						<ul>
+							<li>
+								<p>(x il prof) fare uno schema di cosa fa il parser python</p>
+							</li>
+							<li>
+								<p>(x gli alunni) Scrivere un ciclo while come quello sopra e provare ad apportare delle modifiche per osservare gli effetti</p>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p>ogni esecuzione del blocco si chiama <span style="font-weight: 600;">iterazione</span></p>
+					</section>
+					<section>
+						<p style="font-weight: 600;">l'istruzione <span style="color: blueviolet;">break</span></p>
+						<p>Serve ad uscire dal ciclo prematuramente</p>
+						<pre><code data-trim data-noescape>
+							i = 1
+							while i < 6:
+    						   print(i)
+    						   if i == 3:
+        					      break
+    						   i += 1
+							print("fine loop") 
+						</code></pre>
+					</section>
+					<section>
+						<p style="font-weight: 600;">l'istruzione <span style="color: blueviolet;">continue</span></p>
+						<p>serve a saltare l'iterazione corrente ed eseguire quella successiva</p>
+						<pre><code data-trim data-noescape>
+							i = 0
+							while i < 6:
+							  i += 1
+							  if i == 3:
+							    continue
+							  print(i)
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p style="font-weight: 600;">Gli array (vettori)</p>
+						<p>Un array è una variabile che può contenere più valori.</p>
+					</section>
+					<section>
+						<p>Si immagini di avere la seguente situazione</p>
+						<pre><code data-trim>
+							car1 = "Ford"
+							car2 = "Volvo"
+							car3 = "BMW"
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>Per aggiungere un nuovo valore (Tesla) bisogna creare una nuova variabile.</li>
+							<li>Per aggiungere 10000 nuovi valori, bisogna creare 10000 nuove variabili.</li>
+							<li>Tra queste è poi difficile trovare quella che ha un certo valore.</li>
+						</ul>
+						<p>In tali situazioni tornano utili gli array.</p>
+					</section>
+					<section>
+						<p style="font-weight: 600;">Sintassi</p>
+						<pre><code data-trim>
+							cars = ["Ford", "Volvo", "BMW"] 
+						</code></pre>
+					</section>
+					<section>
+						<p style="font-weight: 600;">Accedere agli elementi dell'array</p>
+						<pre><code data-trim>
+							x = cars[0] 
+						</code></pre>
+						<ul>
+							<li>Ogni elemento ha una posizione.</li>
+							<li>Il primo ha posizione 0, il secondo 1, etc.</li>
+						</ul>
+					</section>
+					<section>
+						<p>Modificare il valore di un elemento</p>
+						<pre><code data-trim>
+							cars[0] = "Toyota"
+						</code></pre>
+					</section>
+					<section>
+						<p>Lunghezza di un array</p>
+						<pre><code data-trim>
+							x = len(cars) 
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<p style="font-weight: 600;">Slicing operation</p>
+					</section>
+					<section>
+						<p>nomeArray[ inizio : fine : step ]</p>
+						<pre><code data-trim>
+							mioArray = [1, 2, 3, 4, 5, 6, 7]
+							print(mioArray[1:4:2])
+						</code></pre>
+						<p>Impostare step -1 per ottenere gli elementi al contrario.</p>
+						<p>Questa sintassi funziona anche con le stringhe</p>
+					</section>
+				</section>
+
+				<section>
+					<p>#LabTime</p>
+					<p>utilizzare un ciclo <span style="color: blueviolet;">while</span> per stampare gli elementi di un array</p>
+					<pre><code data-trim>
+						cars = ["Ford", "Volvo", "BMW"] 
+						#Hint
+						elementCount = 0
+						while elementCount < ???? :
+							print( cars[????] )
+					</code></pre>
+				</section>
+				<section>
+					<a href="https://www.w3schools.com/python/python_arrays.asp">w3schools array</a>
+				</section>
+				<section>
+					<section>
+						<p style="font-weight: 600;">Il ciclo <span style="color: blueviolet;">for</span></p>
+					</section>
+					<section>
+						<p>Con il ciclo for possiamo eseguire un blocco di istruzioni per ogni elemento dell'array</p>
+						<pre><code data-trim>
+							fruits = ["apple", "banana", "cherry"]
+							for x in fruits:
+  							  print(x)
+						</code></pre>
+					</section>
+					<section>
+						<p>
+							Se vogliamo il numero dell'iterazione corrente possiamo adottare 
+							diverse strategie. 
+						</p>
+						<p>
+							Una strategia non immediata ma sintatticamente elegante è la seguente:
+						</p>
+						<pre><code data-trim>
+							mioArray=[1, 2, 3, 4, 5, 6, 7]
+							for x in range(len(mioArray)):
+    						    print("l'elemento in posizione ", x, "è: ",mioArray[x])							
+						</code></pre>
+						<p style="font-size: small;">una espressione è una concatenazione di operazioni e funzioni</p>
+					</section>
+					<section>
+						<p>Nested loops</p>
+						<pre><code>
+							cars = ["BMW", "Jaguar", "Alfa-Romeo"]
+							versions = ["Berlina", "SUV", "Cabrio", "Coupe"]
+							
+							for car in cars:
+								print(car, " Versions: ")
+								for version in versions:
+									print(version, end="; ")
+								print("\n\n")							
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Funzioni</h2>
+						<ul>
+							<li>Una funzione è un blocco di codice che viene eseguito quando lo invochiamo</li>
+							<li>Gli possiamo passare dei dati in input (parametri)</li>
+							<li>Possiamo ottenere un valore in output (return)</li>
+						</ul>
+					</section>
+					<section>
+						<p style="font-weight: 600;">Si definisce con <span style="color: blueviolet;">def</span></p>
+						<pre><code>
+							def my_function():
+								print("Hello from a function")							
+						</code></pre>
+					</section>
+					<section>
+						<p>Si chiama scrivendo il suo nome seguito da parentesi</p>
+						<pre><code>
+							my_function()
+						</code></pre>
+					</section>
+					<section>
+						<p>Passiamo i parametri in input, specificandoli tra parentesi.</p>
+						<pre><code data-trim>
+							def stampa_nome(nome):
+								print("Ti chiami ", nome, " Rossi")
+							
+							stampa_nome("Damiano")
+							stampa_nome("Valentino")
+						</code></pre>
+					</section>
+					<section>
+						<p>Possiamo specificare più parametri, separandoli con la virgola</p>
+						<pre><code data-trim>
+							def stampa_nome(nome, cognome):
+								print("Ti chiami ", nome, " ", cognome)
+							
+							stampa_nome("Damiano", "Stopo")
+							stampa_nome("Valentino", "Rossi")
+						</code></pre>
+					</section>
+					<section>
+						<p style="font-weight: 600;">#LabTime</p>
+						<ul>
+							<li>Scrivere una funzione che accetta in input nome e cognome</li>
+							<li>SE il cognome è rossi stampa "nome cognome, sei un campione"; 
+								altrimenti "nome cognome allenati ancora"
+							</li>
+							<li>
+								Prova la funzione chiamandola con 3 nomi e cognomi diversi
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p>#Live Demo</p>
+						<p>creiamo un vettore di nomi e chiamiamo la funzione per ogni elemento del vettore</p>
+					</section>
+					<section>
+						<p style="font-weight: 600;">Valore di ritorno: <span style="color: blueviolet;">return</span></p>
+						<pre><code>
+						  def my_function(x):
+							  return 5 * x
+						  
+						  print(my_function(3))
+						  print(my_function(5))
+						  print(my_function(9))							
+						</code></pre>
+					</section>
+					<section>
+						<p style="font-weight: 600;">
+							Live Demo
+						</p>
+						<ul>
+							<li>creiamo una funzione che fa un po di calcoli e ritorna il risultato</li>
+							<li>Assegnare il valore di ritorno a una variabile</li>
+							<li>funzione che calcola la media aritmetica di un vettore</li>
+						</ul>
+					</section>
+					<section>
+						<p style="font-weight: 600;">#LabTime</p>
+						<p>Scrivere una funzione che accetta in input un numero e ritorna in output</p>
+						<ul>
+							<li>SE il numero è maggiore di 1, il suo doppio
+							</li>
+							<li>
+								Altrimenti la quantità che serve per arrivare a 1
+							</li>
+						</ul>
+						<p>es. se n=5 ritorna 10. <br>Se n = -5 ritorna 6</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
